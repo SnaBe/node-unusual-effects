@@ -1,0 +1,1 @@
+//Unusual Effect resources for node-unusual-effects v1.0.0

@@ -1,7 +1,7 @@
 {
   "name": "unusual-effects",
   "version": "1.0.0",
-  "description": "A node module for finding Team Fortress 2 unusual effects and and retrieving their images from Backpack.tf.",
+  "description": "A node module for finding Team Fortress 2 unusual effects and retrieving their images from Backpack.tf.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
