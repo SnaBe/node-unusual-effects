@@ -1,5 +1,5 @@
 # node-unusual-effects
-A node module for finding Team Fortress 2 unusual effects and retrieving their images from Backpack.tf
+A node module for finding Team Fortress 2 Unusual effects and retrieving their images from Backpack.tf
 
 ## TODO
 1. Find Unusual effects by name and ID. (findEffectByName, findEffectById)
