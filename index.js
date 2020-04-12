@@ -73,7 +73,7 @@ module.exports = {
         //Local Unusual object 
         var unusual = {};
 
-        //Assign some new values to unusual object depening on the effect parameters data type
+        //Assign some new values to our Unusual object depending on the data type of the effect parameter
         if(Str.isString(effect) && isNaN(effect)) {
             //The name of the Unusual effect
             unusual.id = this.findEffectByName(effect);
@@ -104,6 +104,17 @@ module.exports = {
      * @returns {Object} If the EconItem object contains a description value matching 
      */
     getEffectFromObject (item) {
-        throw new Error('This function has not been implemented.');
+        //TODO
+        if(!item.descriptions) {
+            throw new Error('Your EconItem object seems to be missing an array of descriptions and therefore could not be an Unusual item.');
+        }
+
+        for(var n = 0; n < item.descriptions.length; n++) {
+            if(item.descriptions[n].value.includes('Unusual Effect')) {
+                console.log(item.market_hash_name);
+            }
+        }
+
+        //throw new Error('This function has not been implemented.');
     }
 }
