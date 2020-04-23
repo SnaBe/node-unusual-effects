@@ -1,21 +1,15 @@
 //Replace this with const Unusual = require('unusual-effects'); if used outside of the module directory
 const Unusual = require('../index');
 
-console.log(Unusual.findEffectById(20));
-
-console.log(Unusual.findEffectByName('Burning Flames'));
-
-console.log(Unusual.findEffectById(32));
-
-console.log(Unusual.isUnusual('Flying Tits'));
-
-console.log(Unusual.getEffectImages(7));
-
-//Example of error handling
+//Example of finding Unusual effects based on names and ids with error handling 
+//You can change the effect name and id to see different results
 try {
-    const effect = Unusual.findEffectByName('Sunbeams');
+    //Should log 17 (17 is the effect id matching Sunbeams)
+    console.log(Unusual.findEffectByName('Sunbeams'));
 
-    console.log(effect);
+    //Should log Scorching Flames (14 is the effect id for Scorching Flames)
+    console.log(Unusual.findEffectById(14));
 } catch (error) {
-    console.log(error.message);
+    //Log the error we caught
+    console.log('Error finding Unusual effect: %s', error.message);
 }

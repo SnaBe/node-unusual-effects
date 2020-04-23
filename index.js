@@ -22,7 +22,7 @@ module.exports = {
     /**
      * Find the effect id matching the parsed Unusual effect's name.
      * @description Unusual effect names can be obtained from an EconItem object's description or a Steam Web API response.
-     * @param {String} effect - The name of the Unusual effect. 
+     * @param {String} effect The name of the Unusual effect. 
      * @returns {Number} The Unusual effect's id matching the 'effect' parameter. 
      */
     findEffectByName (effect) {
@@ -34,7 +34,7 @@ module.exports = {
         //Check if effect parameter is an actual Unusual effect
         if(!this.isUnusual(effect)) {
             //Not a valid Unusual effect
-            throw new Error(`The effect name parameter does not match any known Unusual effects.`);
+            throw new Error('The effect name parameter does not match any known Unusual effects.');
         }
 
         //Return the effect id 
@@ -56,7 +56,7 @@ module.exports = {
         //Check if effect parameter is an actual Unusual effect
         if(!this.isUnusual(id)) {
             //Not a valid Unusual effect
-            throw new Error(`The id parameter does not match any known Unusual effects.`);
+            throw new Error('The id parameter does not match any known Unusual effects.');
         }
 
         //Return the effect name
@@ -64,7 +64,7 @@ module.exports = {
     },
 
     /**
-     * Get the particle images for a given Unusual effect.
+     * Get the particle images for any given Unusual effect.
      * @description Particle images are provided by Backpack.tf and comes in various sizes (small, medium, large). 
      * @param {String|Number} effect Any Unusual effect name or id.
      * @returns {Object} An object containing the Unusual effect's name, id and images.
@@ -98,23 +98,44 @@ module.exports = {
     },
 
     /**
-     * Get the Unusual effect's name, standardized name, id & images from an EconItem Object. 
-     * @description This function relies on EconItem objects returned from node-steamcommunity & node-steam-tradeoffer-manager methods.
+     * Get an Unusual effect's name, standardized name, id & images from an EconItem object. 
+     * @description This function relies on EconItem objects returned from node-steamcommunity, node-steam-tradeoffer-manager or the Steam Web API.
      * @param {Object} item An EconItem object that represents an item within the Steam Economy. 
-     * @returns {Object} If the EconItem object contains a description value matching 
+     * @returns {Object} An object containing the available details for an Unusual effect, otherwise, null.
      */
     getEffectFromObject (item) {
-        //TODO
-        if(!item.descriptions) {
-            throw new Error('Your EconItem object seems to be missing an array of descriptions and therefore could not be an Unusual item.');
+        //Make sure that the item parameter is of type object
+        if(!Obj.isObject(item)) {
+            throw new Error('The item parameter must be an EconItem of type object.');
         }
 
+        //Check if the object contains a description value
+        if(!item.descriptions) {
+            throw new Error('Your EconItem object seems to be missing an array of descriptions.');
+        }
+
+        //Loop trough the item's descriptions
         for(var n = 0; n < item.descriptions.length; n++) {
-            if(item.descriptions[n].value.includes('Unusual Effect')) {
-                console.log(item.market_hash_name);
+            //Check if the item is Unusual and has an Unusual effect listed in its description
+            if(Str.itemIsUnusual(item.market_hash_name) && Str.hasUnusualEffect(item.descriptions[n].value)) {
+                //The Unusual effect object
+                var effect = {};
+
+                //The Unusual effect
+                var unusual_effect = Str.getUnsualEffect(item.descriptions[n].value);
+
+                //Particle images for the Unusual effect
+                effect = this.getEffectImages(unusual_effect);
+
+                //The Unusual effects standardized name
+                effect.standardized_name = Str.getStandardizedName(item.market_hash_name, unusual_effect);
+                
+                //Return the Unusual effect
+                return effect;
             }
         }
-
-        //throw new Error('This function has not been implemented.');
+        
+        //Return null if no Unusual effect was found
+        return null;
     }
 }
