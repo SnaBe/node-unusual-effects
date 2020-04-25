@@ -1,7 +1,7 @@
 //Replace this with const Unusual = require('unusual-effects'); if used outside of the module directory
 const Unusual = require('../index');
 
-//Example of finding particle images for Unusual effects on based names and ids with error handling 
+//Example of finding particle images for Unusual effects based on names and ids with error handling 
 //You can change the effect name and id to see different results
 try {
     //Get the particle images for the Nebula Unusual effect

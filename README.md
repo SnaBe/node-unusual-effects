@@ -1,17 +1,28 @@
 # node-unusual-effects
 A node module for finding Team Fortress 2 Unusual effects and retrieving their images from Backpack.tf
 
-## TODO
-1. Find Unusual effects by name and ID. (findEffectByName, findEffectById)
-2. Retreive the Unsual effect's images from Backpack.tf (Should return an object with small, medium and large image sizes).
-3. A method for extracting the Unusual effect's name from an EconItem object's description.
-4. Rename and return a new Item name to match the standard used by Backpack.tf (Unusual Team Captain should become Burning Flames Team Captain).
-5. Setup a testing environment for the package (npm run test).
-6. Create a set of examples and use cases for the package (Use cases). 
-7. Create a Wiki page for the documentation (Setup & Installation, Core functionality & methods).
-8. Add the necessary details to the README.md file (Introduction, Installation, Usage, Documentation).
-9. Publish the package. 
+[![npm version](https://img.shields.io/npm/v/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
+[![npm downloads](https://img.shields.io/npm/dm/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
+[![dependencies](https://img.shields.io/david/SnaBe/node-unusual-effects.svg)](https://david-dm.org/SnaBe/node-unusual-effects)
+[![license](https://img.shields.io/npm/l/unusual-effects.svg)](https://github.com/SnaBe/node-unusual-effects/blob/master/LICENSE)
+[![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/snabe)
 
-## Notes
-- Provide the necessary comments for Functions and Classes. 
-- All Functions and Classes must obey the [documentation standards](https://make.wordpress.org/core/handbook/best-practices/inline-documentation-standards/javascript/) for Javascript.
+## Installation
+
+Install it using [npm](https://www.npmjs.com/package/unusual-effects):
+
+    npm install unusual-effects
+
+## Usage
+
+    npm run test
+
+See the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) folder for more usage cases.
+
+- Setting up a basic project
+- Initialize a new Steam Market Fetcher instance, with custom options
+- Getting item prices & images for CS:GO, DOTA 2 & TF2
+
+## Documentation
+
+See the [Wiki](https://github.com/SnaBe/node-unusual-effects/wiki) for further documentation.
