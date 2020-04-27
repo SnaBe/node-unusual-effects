@@ -13,7 +13,7 @@ Install it using [npm](https://www.npmjs.com/package/unusual-effects):
 
     npm install unusual-effects
 
-## Usage
+## Basic usage
 
     npm run test
 
