@@ -19,9 +19,10 @@ Install it using [npm](https://www.npmjs.com/package/unusual-effects):
 
 See the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) folder for more usage cases.
 
-- Setting up a basic project
-- Initialize a new Steam Market Fetcher instance, with custom options
-- Getting item prices & images for CS:GO, DOTA 2 & TF2
+- Setting up a basic project.
+- Find Unusual effects using effect names and ids.
+- Get particle images for Unusual effects.
+- Get Unusual effects from EconItem objects.
 
 ## Documentation
 
