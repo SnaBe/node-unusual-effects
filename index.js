@@ -23,7 +23,7 @@ module.exports = {
      * Find the effect id matching the parsed Unusual effect's name.
      * @description Unusual effect names can be obtained from an EconItem object's description or a Steam Web API response.
      * @param {String} effect The name of the Unusual effect. 
-     * @returns {Number} The Unusual effect's id matching the 'effect' parameter. 
+     * @returns {Number} The Unusual effect's id matching the 'effect' parameter or null. 
      */
     findEffectByName (effect) {
         //Check if the parsed effect parameter is a String
@@ -34,7 +34,7 @@ module.exports = {
         //Check if effect parameter is an actual Unusual effect
         if(!this.isUnusual(effect)) {
             //Not a valid Unusual effect
-            throw new Error('The effect name parameter does not match any known Unusual effects.');
+            return null;
         }
 
         //Return the effect id 
@@ -45,7 +45,7 @@ module.exports = {
      * Find the Unusual effect's name matching the parsed effect id.
      * @description Unusual effect ids can usually be obtained from a Backpack.tf API response.
      * @param {String|Number} id The id of the Unusual effect.
-     * @returns {String} The name of the Unusual effect matching the 'id' parameter.
+     * @returns {String} The name of the Unusual effect matching the 'id' parameter or null.
      */
     findEffectById (id) {
         //Check if the parsed id parameter is a Number
@@ -56,7 +56,7 @@ module.exports = {
         //Check if effect parameter is an actual Unusual effect
         if(!this.isUnusual(id)) {
             //Not a valid Unusual effect
-            throw new Error('The id parameter does not match any known Unusual effects.');
+            return null;
         }
 
         //Return the effect name
@@ -70,7 +70,13 @@ module.exports = {
      * @returns {Object} An object containing the Unusual effect's name, id and images.
      */
     getEffectImages (effect) {
-        //Local Unusual object 
+        //Check if effect parameter is an actual Unusual effect
+        if(!this.isUnusual(effect)) {
+            //Not a valid Unusual effect
+            return null;
+        }
+
+        //Store our local Unusual object here
         var unusual = {};
 
         //Assign some new values to our Unusual object depending on the data type of the effect parameter

@@ -11,8 +11,8 @@ const community = new SteamCommunity();
 //Example of getting Unusual effects from EconItem objects with error handling 
 //You can change the Steam ID to see different results
 try {
-    //Retrieve Steam user 76561198089922529's (that's me) Team Fortress 2 inventory
-    community.getUserInventoryContents('76561198089922529', 440, 2, true, (err, inventory) => {
+    //Retrieve Steam user 76561197977733292's Team Fortress 2 inventory
+    community.getUserInventoryContents('76561197977733292', 440, 2, true, (err, inventory) => {
         //Check if the callback resulted in any errors
         if(err) {
             //We encountered an error attempting to get the user's inventory

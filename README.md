@@ -13,11 +13,15 @@ Install it using [npm](https://www.npmjs.com/package/unusual-effects):
 
     npm install unusual-effects
 
-## Basic usage
+## Testing 
 
     npm run test
 
-See the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) folder for more usage cases.
+## Basic usage
+
+    npm run find
+
+There are more [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) available in the examples directory.
 
 - Setting up a basic project.
 - Find Unusual effects using effect names and ids.
