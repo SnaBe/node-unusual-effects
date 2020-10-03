@@ -28,4 +28,15 @@ describe('unusual-effects tests', () => {
             expect(result).to.equal('Scorching Flames');
         });
     });
+
+    //Test & verify the return value of findEffectByName()
+    describe('findEffectByName test', () => {
+        it('should return null', () => {
+            //Check if the Unusual effect exists (the expected result should be null)
+            const result = Unusual.findEffectByName('Banana Storm');
+
+            //The result should equal null as no effect named Banana Storm exists
+            expect(result).to.equal(null);
+        });
+    });
 });

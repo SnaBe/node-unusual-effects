@@ -1,7 +1,7 @@
 {
   "name": "unusual-effects",
   "version": "1.1.0",
-  "description": "A node module for finding Team Fortress 2 unusual effects and retrieving their images from Backpack.tf.",
+  "description": "A node module for finding Team Fortress 2 unusual effects and retrieving their images from Backpack.tf",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -14,10 +14,15 @@
     "url": "git+https://github.com/SnaBe/node-unusual-effects.git"
   },
   "keywords": [
+    "steam",
     "tf2",
+    "backpack-tf",
+    "trading",
+    "module",
     "unusual",
-    "effect",
-    "image"
+    "effects",
+    "node",
+    "economy"
   ],
   "author": "Simon Snabe Sørensen",
   "license": "MIT",
@@ -27,6 +32,7 @@
   "homepage": "https://github.com/SnaBe/node-unusual-effects#readme",
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^8.1.3"
+    "mocha": "^8.1.3",
+    "steamcommunity": "^3.41.7"
   }
 }

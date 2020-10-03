@@ -9,5 +9,5 @@ console.log(Unusual.getEffectImages('Nebula'));
 //Get the particle images matching the effect id of 9
 console.log(Unusual.getEffectImages(9));
 
-//An example of an Unusual Effect that doesn't exist, meaning, no images could be found
+//An example of an Unusual Effect that doesn't exist, meaning no images could be found
 console.log(Unusual.findEffectByName('Aurora Borealis'));

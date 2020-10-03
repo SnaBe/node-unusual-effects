@@ -21,7 +21,9 @@ Install it using [npm](https://www.npmjs.com/package/unusual-effects):
 
     npm run find
 
-There are more [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) available in the examples directory.
+## Examples
+
+There are some examples available in the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) directory.
 
 - Setting up a basic project.
 - Find Unusual effects using effect names and ids.

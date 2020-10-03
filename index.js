@@ -1,18 +1,19 @@
-//node-unusual-effects v1.0.0
+//node-unusual-effects v1.1.0
 
-//Import some self-written javascript libraries
+//Import some self-written Javascript libraries
 const Obj = require('./lib/object');
 const Str = require('./lib/string');
 
 //Import our Unusual effect resources
 const effects = require('./resources/effects');
 
+//Export the module
 module.exports = {
     /**
      * Check if a String (effect name) or Number (effect id) is an Unusual effect.
      * @description This function is used as middleware by the following methods; findEffectByName, findEffectById  
      * @param {String|Number} effect Any Unusual effect name or id.
-     * @returns {Boolean} True, if the effect matches any known Unusual effect, otherwise, false.
+     * @returns {Boolean} True if the effect matches any known Unusual effect, otherwise false.
      */
     isUnusual (effect) {
         //Return the Boolean value from the Object.includes() function.
@@ -23,7 +24,7 @@ module.exports = {
      * Find the effect id matching the parsed Unusual effect's name.
      * @description Unusual effect names can be obtained from an EconItem object's description or a Steam Web API response.
      * @param {String} effect The name of the Unusual effect. 
-     * @returns {Number} The Unusual effect's id matching the 'effect' parameter or null. 
+     * @returns {Number} The Unusual effect's id matching the 'effect' parameter, otherwise null. 
      */
     findEffectByName (effect) {
         //Check if the parsed effect parameter is a String
@@ -45,7 +46,7 @@ module.exports = {
      * Find the Unusual effect's name matching the parsed effect id.
      * @description Unusual effect ids can usually be obtained from a Backpack.tf API response.
      * @param {String|Number} id The id of the Unusual effect.
-     * @returns {String} The name of the Unusual effect matching the 'id' parameter or null.
+     * @returns {String} The name of the Unusual effect matching the 'id' parameter, otherwise null.
      */
     findEffectById (id) {
         //Check if the parsed id parameter is a Number
@@ -107,7 +108,7 @@ module.exports = {
      * Get an Unusual effect's name, standardized name, id & images from an EconItem object. 
      * @description This function relies on EconItem objects returned from node-steamcommunity, node-steam-tradeoffer-manager or the Steam Web API.
      * @param {Object} item An EconItem object that represents an item within the Steam Economy. 
-     * @returns {Object} An object containing the available details for an Unusual effect, otherwise, null.
+     * @returns {Object} An object containing the available details for an Unusual effect, otherwise null.
      */
     getEffectFromObject (item) {
         //Make sure that the item parameter is of type object
