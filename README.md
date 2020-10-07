@@ -15,7 +15,7 @@ Install it using [npm](https://www.npmjs.com/package/unusual-effects):
 
 ## Testing 
 
-    npm run test
+    npm test
 
 ## Basic usage
 

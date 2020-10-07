@@ -36,7 +36,7 @@ describe('unusual-effects tests', () => {
             const result = Unusual.findEffectByName('Banana Storm');
 
             //The result should equal null as no effect named Banana Storm exists
-            expect(result).to.equal(null);
+            expect(result).to.be.null;
         });
     });
 });
