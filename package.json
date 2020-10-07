@@ -1,6 +1,6 @@
 {
   "name": "unusual-effects",
-  "version": "1.2.0",
+  "version": "1.2.5",
   "description": "A node module for finding Team Fortress 2 unusual effects and retrieving their images from Backpack.tf",
   "main": "index.js",
   "scripts": {
