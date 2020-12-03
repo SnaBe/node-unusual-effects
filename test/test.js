@@ -30,13 +30,21 @@ describe('unusual-effects tests', () => {
     });
 
     //Test & verify the return value of findEffectByName()
-    describe('findEffectByName test', () => {
+    describe('findEffectByName tests', () => {
         it('should return null', () => {
             //Check if the Unusual effect exists (the expected result should be null)
             const result = Unusual.findEffectByName('Banana Storm');
 
             //The result should equal null as no effect named Banana Storm exists
             expect(result).to.be.null;
+        });
+
+        it('should return an array', () => {
+            //Check if the Unusual effect exists (the expected result should be an array)
+            const result = Unusual.findEffectByName('Showstopper');
+
+            //The result should equal an array as Showstopper has more than one variant
+            expect(result).to.be.an('array');
         });
     });
 });
