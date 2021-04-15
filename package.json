@@ -31,8 +31,8 @@
   },
   "homepage": "https://github.com/SnaBe/node-unusual-effects#readme",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^8.1.3",
-    "steamcommunity": "^3.41.7"
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "steamcommunity": "^3.42.0"
   }
 }
