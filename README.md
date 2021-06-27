@@ -26,9 +26,9 @@ Install it using [npm](https://www.npmjs.com/package/unusual-effects):
 There are some examples available in the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) directory.
 
 - Setting up a basic project.
-- Find Unusual effects using effect names and ids.
-- Get particle images for Unusual effects.
-- Get Unusual effects from EconItem objects.
+- Find Unusual Effects using effect names and ids.
+- Get Particle Images for Unusual Effects.
+- Get Unusual Effects from [EconItem objects](https://github.com/DoctorMcKay/node-steamcommunity/wiki/CEconItem).
 
 ## Documentation
 
