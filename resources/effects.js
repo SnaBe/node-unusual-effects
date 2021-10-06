@@ -1,6 +1,6 @@
-//Unusual Effect resources for node-unusual-effects v1.1.0
+// Unusual Effect resources for node-unusual-effects v1.1.0
 module.exports = {
-    //Unusual effect IDs and their matching name
+    // Unusual effect IDs and their matching name
     4: 'Community Sparkle',
     5: 'Holy Glow',
     6: 'Green Confetti',
@@ -164,6 +164,22 @@ module.exports = {
     186: 'Flavorsome Sunset',
     187: 'Raspberry Bloom',
     188: 'Iridescence',
+    189: 'Tempered Thorns',
+    190: 'Devilish Diablo',
+    191: 'Severed Serration',
+    192: 'Shrieking Shades',
+    193: 'Restless Wraiths',
+    194: 'Restless Wraiths',
+    195: 'Infernal Wraith',
+    196: 'Phantom Crown',
+    197: 'Ancient Specter',
+    198: 'Viridescent Peeper',
+    199: 'Eyes of Molten',
+    200: 'Ominous Stare',
+    201: 'Pumpkin Moon',
+    202: 'Frantic Spooker',
+    203: 'Frightened Poltergeist',
+    204: 'Energetic Haunter',
     701: 'Hot',
     702: 'Isotope',
     703: 'Cool',
@@ -225,7 +241,7 @@ module.exports = {
     3055: 'Twinkling Lights',
     3056: 'Shimmering Lights',
 
-    //Unusual effects names and their matching ID
+    // Unusual effects names and their matching ID
     'Community Sparkle': 4,
     'Holy Glow': 5,
     'Green Confetti': 6,
@@ -389,6 +405,21 @@ module.exports = {
     'Flavorsome Sunset': 186,
     'Raspberry Bloom': 187,
     'Iridescence': 188,
+    'Tempered Thorns': 189,
+    'Devilish Diablo': 190,
+    'Severed Serration': 191,
+    'Shrieking Shades': 192,
+    'Restless Wraiths': [193, 194],
+    'Infernal Wraith': 195,
+    'Phantom Crown': 196,
+    'Ancient Specter': 197,
+    'Viridescent Peeper': 198,
+    'Eyes of Molten': 199,
+    'Ominous Stare': 200,
+    'Pumpkin Moon': 201,
+    'Frantic Spooker': 202,
+    'Frightened Poltergeist': 203,
+    'Energetic Haunter': 204,
     'Hot': 701,
     'Isotope': 702,
     'Cool': 703,
