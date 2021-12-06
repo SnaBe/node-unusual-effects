@@ -10,4 +10,4 @@ console.log(Unusual.getEffectImages('Nebula'));
 console.log(Unusual.getEffectImages(9));
 
 // An example of an Unusual Effect that doesn't exist, meaning no images could be found
-console.log(Unusual.findEffectByName('Aurora Borealis'));
+console.log(Unusual.findEffectByName('Hail Storm'));
