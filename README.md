@@ -3,7 +3,6 @@ A node module for finding Team Fortress 2 Unusual effects and retrieving their i
 
 [![npm version](https://img.shields.io/npm/v/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
 [![npm downloads](https://img.shields.io/npm/dm/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
-[![dependencies](https://img.shields.io/david/SnaBe/node-unusual-effects.svg)](https://david-dm.org/SnaBe/node-unusual-effects)
 [![license](https://img.shields.io/npm/l/unusual-effects.svg)](https://github.com/SnaBe/node-unusual-effects/blob/master/LICENSE)
 [![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/snabe)
 
