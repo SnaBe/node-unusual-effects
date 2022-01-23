@@ -8,17 +8,23 @@ A node module for finding Team Fortress 2 Unusual effects and retrieving their i
 
 ## Installation
 
-Install it using [npm](https://www.npmjs.com/package/unusual-effects):
+Using [npm](https://www.npmjs.com/package/unusual-effects):
 
-    npm install unusual-effects
+    $ npm install unusual-effects
+
+Using [yarn](https://yarnpkg.com/package/unusual-effects):
+
+```bash
+$ yarn add unusual-effects
+```
 
 ## Testing 
 
-    npm test
+    $ npm test
 
 ## Basic usage
 
-    npm run find
+    $ npm run find
 
 ## Examples
 
@@ -32,3 +38,9 @@ There are some examples available in the [examples](https://github.com/SnaBe/nod
 ## Documentation
 
 See the [Wiki](https://github.com/SnaBe/node-unusual-effects/wiki) for further documentation.
+
+## License
+
+[MIT](LICENSE)
+
+Copyright 2021, Simon Sørensen
