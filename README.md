@@ -1,5 +1,5 @@
 # node-unusual-effects
-A node module for finding Team Fortress 2 Unusual effects and retrieving their images from Backpack.tf
+A node module for finding Team Fortress 2 Unusual effects and retrieving their images from [Backpack.tf](https://backpack.tf/developer/particles).
 
 [![npm version](https://img.shields.io/npm/v/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
 [![npm downloads](https://img.shields.io/npm/dm/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
@@ -9,8 +9,9 @@ A node module for finding Team Fortress 2 Unusual effects and retrieving their i
 ## Installation
 
 Using [npm](https://www.npmjs.com/package/unusual-effects):
-
-    $ npm install unusual-effects
+```bash
+$ npm install unusual-effects
+```
 
 Using [yarn](https://yarnpkg.com/package/unusual-effects):
 
@@ -19,21 +20,31 @@ $ yarn add unusual-effects
 ```
 
 ## Testing 
-
-    $ npm test
-
-## Basic usage
-
-    $ npm run find
+```bash
+$ npm test
+```
 
 ## Examples
 
-There are some examples available in the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) directory.
+### Importing with `CommonJS`
 
-- Setting up a basic project.
-- Find Unusual Effects using effect names and ids.
-- Get Particle Images for Unusual Effects.
-- Get Unusual Effects from [EconItem objects](https://github.com/DoctorMcKay/node-steamcommunity/wiki/CEconItem).
+```js
+const Unusual = require('unusual-effects');
+```
+
+### or with `ES6's import` statement.
+
+```js
+import Unusual from 'unusual-effects';
+```
+
+### Get `particle images` using the effect's name
+
+```js
+console.log(Unusual.getEffectImages('Nebula'));
+```
+
+There are some more examples available in the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) directory.
 
 ## Documentation
 
