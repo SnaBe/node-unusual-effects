@@ -1,5 +1,5 @@
 # unusual-effects
-A node module for finding Team Fortress 2 Unusual effects and retrieving their images from [Backpack.tf](https://backpack.tf/developer/particles).
+A Node.js wrapper for Team Fortress 2's Unusual particle effects.
 
 [![npm version](https://img.shields.io/npm/v/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
 [![node version](https://img.shields.io/node/v/unusual-effects)](https://nodejs.org/en/about/releases/)

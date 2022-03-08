@@ -1,7 +1,7 @@
 {
   "name": "unusual-effects",
   "version": "1.7.0",
-  "description": "A node module for finding Team Fortress 2 unusual effects and retrieving their images from Backpack.tf",
+  "description": "A Node.js wrapper for Team Fortress 2's Unusual particle effects.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
@@ -36,5 +36,8 @@
     "eslint": "^8.10.0",
     "mocha": "^8.4.0",
     "steamcommunity": "^3.44.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
