@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "lint": "eslint --fix .",
     "find": "node examples/find.js",
     "images": "node examples/images.js",
     "objects": "node examples/objects.js"
@@ -31,8 +32,9 @@
   },
   "homepage": "https://github.com/SnaBe/node-unusual-effects#readme",
   "devDependencies": {
-    "chai": "^4.3.4",
+    "chai": "^4.3.6",
+    "eslint": "^8.10.0",
     "mocha": "^8.4.0",
-    "steamcommunity": "^3.43.1"
+    "steamcommunity": "^3.44.0"
   }
 }

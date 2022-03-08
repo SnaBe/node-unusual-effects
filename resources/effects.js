@@ -565,4 +565,4 @@ module.exports = {
     'Frosty Silver': 3084,
     'Glamorous Dazzle': [3085, 3086],
     'Sublime Snowstorm': 3087,
-}
+};

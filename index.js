@@ -102,7 +102,7 @@ module.exports = {
             small: `https://backpack.tf/images/440/particles/${unusual.id}_94x94.png`, // A small image is 94x94 pxiels
             medium: `https://backpack.tf/images/440/particles/${unusual.id}_188x188.png`, // A medium image is 188x188 pxiels
             large: `https://backpack.tf/images/440/particles/${unusual.id}_380x380.png` // A large image is 380x380 pxiels
-        }
+        };
 
         // Return the Unusual object
         return unusual;
@@ -151,4 +151,4 @@ module.exports = {
         // Return null if no Unusual effect was found
         return null;
     }
-}
+};

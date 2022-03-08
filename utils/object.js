@@ -25,6 +25,6 @@ module.exports = {
         }
 
         //Return the Boolean value of the expression
-        return (obj.hasOwnProperty(value));
+        return Object.prototype.hasOwnProperty.call(obj, value);
     }
-}
+};

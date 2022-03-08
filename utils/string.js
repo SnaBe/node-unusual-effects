@@ -54,4 +54,4 @@ module.exports = {
         //Return the standardized name (Replace the Unusal part of the string with the effect)
         return name.replace('Unusual', effect);
     }
-}
+};
