@@ -1,4 +1,4 @@
-// node-unusual-effects v1.6.0
+// node-unusual-effects v1.7.5
 
 // Import some self-written Javascript libraries
 const Obj = require('./utils/object');
@@ -28,13 +28,13 @@ module.exports = {
      */
     findEffectByName (effect) {
         // Check if the parsed effect parameter is a String
-        if(!Str.isString(effect)) { 
+        if (!Str.isString(effect)) { 
             // Not a valid parameter
             throw new Error(`Expected String but received a ${typeof effect}`); 
         }
 
         // Check if effect parameter is an actual Unusual effect
-        if(!this.isUnusual(effect)) {
+        if (!this.isUnusual(effect)) {
             // Not a valid Unusual effect
             return null;
         }
@@ -51,13 +51,13 @@ module.exports = {
      */
     findEffectById (id) {
         // Check if the parsed id parameter is a Number
-        if(isNaN(id)) { 
+        if (isNaN(id)) { 
             // Not a valid parameter
             throw new Error(`Expected Number but received a ${typeof effect}`); 
         }
 
         // Check if effect parameter is an actual Unusual effect
-        if(!this.isUnusual(id)) {
+        if (!this.isUnusual(id)) {
             // Not a valid Unusual effect
             return null;
         }
@@ -74,7 +74,7 @@ module.exports = {
      */
     getEffectImages (effect) {
         // Check if effect parameter is an actual Unusual effect
-        if(!this.isUnusual(effect)) {
+        if (!this.isUnusual(effect)) {
             // Not a valid Unusual effect
             return null;
         }
@@ -83,7 +83,7 @@ module.exports = {
         var unusual = {};
 
         // Assign some new values to our Unusual object depending on the data type of the effect parameter
-        if(Str.isString(effect) && isNaN(effect)) {
+        if (Str.isString(effect) && isNaN(effect)) {
             // The name of the Unusual effect
             unusual.id = this.findEffectByName(effect);
 
@@ -116,21 +116,21 @@ module.exports = {
      */
     getEffectFromObject (item) {
         // Make sure that the item parameter is of type object
-        if(!Obj.isObject(item)) {
+        if (!Obj.isObject(item)) {
             // Not a valid parameter
             throw new Error('The item parameter must be an EconItem of type object.');
         }
 
         // Check if the object contains a description value
-        if(!item.descriptions) {
+        if (!item.descriptions) {
             // Not a valid EconItem object
             throw new Error('Your EconItem object seems to be missing an array of descriptions.');
         }
 
         // Loop trough the item's descriptions
-        for(var n = 0; n < item.descriptions.length; n++) {
+        for (var n = 0; n < item.descriptions.length; n++) {
             // Check if the item is Unusual and has an Unusual effect listed in its description
-            if(Str.itemIsUnusual(item.market_hash_name) && Str.hasUnusualEffect(item.descriptions[n].value)) {
+            if (Str.itemIsUnusual(item.market_hash_name) && Str.hasUnusualEffect(item.descriptions[n].value)) {
                 // The Unusual effect object
                 var effect = {};
 

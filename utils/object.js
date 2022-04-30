@@ -19,7 +19,7 @@ module.exports = {
      */
     includes (obj, value) {
         //Check if parsed parameter is an Object
-        if(!this.isObject(obj)) {
+        if (!this.isObject(obj)) {
             //Not an object
             throw new Error('The obj parameter is not of type Object.');
         }
