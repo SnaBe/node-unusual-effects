@@ -6,7 +6,7 @@ module.exports = {
      * @returns { boolean } True if the parameter is of type Object, otherwise false.
      */
     isObject (data) {
-        //Return the Boolean value of the expression
+        // Return the Boolean value of the expression
         return (typeof data === 'object');
     },
 
@@ -18,13 +18,13 @@ module.exports = {
      * @returns { boolean } True if the obj parameter is of type object, otherwise false.
      */
     includes (obj, value) {
-        //Check if parsed parameter is an Object
+        // Check if parsed parameter is an Object
         if (!this.isObject(obj)) {
-            //Not an object
+            // Not an object
             throw new Error('The obj parameter is not of type Object.');
         }
 
-        //Return the Boolean value of the expression
+        // Return the Boolean value of the expression
         return Object.prototype.hasOwnProperty.call(obj, value);
     }
 };
