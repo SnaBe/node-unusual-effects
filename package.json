@@ -1,9 +1,9 @@
 {
   "name": "unusual-effects",
-  "version": "1.7.5",
+  "version": "1.7.6",
   "description": "A Node.js wrapper for Team Fortress 2's Unusual particle effects.",
   "main": "index.js",
-  "types": "index.d.ts", 
+  "types": "index.d.ts",
   "scripts": {
     "test": "mocha",
     "lint": "eslint --fix .",
