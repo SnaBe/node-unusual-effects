@@ -6,10 +6,7 @@
   "types": "index.d.ts",
   "scripts": {
     "test": "mocha",
-    "lint": "eslint --fix .",
-    "find": "node examples/find.js",
-    "images": "node examples/images.js",
-    "objects": "node examples/objects.js"
+    "lint": "eslint --fix ."
   },
   "repository": {
     "type": "git",
@@ -34,9 +31,10 @@
   "homepage": "https://github.com/SnaBe/node-unusual-effects#readme",
   "devDependencies": {
     "chai": "^4.3.6",
-    "eslint": "^8.10.0",
+    "eslint": "^8.19.0",
     "mocha": "^8.4.0",
-    "steamcommunity": "^3.44.0"
+    "steamcommunity": "^3.44.1",
+    "typescript": "^4.7.4"
   },
   "engines": {
     "node": ">=14.0.0"
