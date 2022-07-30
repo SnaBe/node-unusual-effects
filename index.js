@@ -1,4 +1,4 @@
-// node-unusual-effects v1.8.7
+// node-unusual-effects v1.8.0
 
 // Import some Javascript utilities
 const utils = require('./lib/utils');
