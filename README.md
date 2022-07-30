@@ -47,7 +47,7 @@ import Unusual from 'unusual-effects';
 console.log(Unusual.getEffectImages('Nebula'));
 ```
 
-There are some more examples available in the [examples](https://github.com/SnaBe/node-unusual-effects/tree/master/examples) directory.
+There are some more examples available in the [test](https://github.com/SnaBe/node-unusual-effects/tree/master/test) directory.
 
 ## Documentation
 
@@ -57,4 +57,4 @@ See the [Wiki](https://github.com/SnaBe/node-unusual-effects/wiki) for further d
 
 [MIT](LICENSE)
 
-Copyright 2021, Simon Sørensen
+Copyright 2022, Simon Sørensen

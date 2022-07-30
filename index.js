@@ -1,8 +1,7 @@
-// node-unusual-effects v1.7.5
+// node-unusual-effects v1.8.7
 
-// Import some self-written Javascript libraries
-const Obj = require('./utils/object');
-const Str = require('./utils/string');
+// Import some Javascript utilities
+const utils = require('./lib/utils');
 
 // Import our Unusual effect resources
 const effects = require('./resources/effects');
@@ -17,7 +16,7 @@ module.exports = {
      */
     isUnusual (effect) {
         // Return the Boolean value from the Object.includes() function
-        return (Obj.includes(effects, effect));
+        return (utils.includes(effects, effect));
     },
 
     /**
@@ -28,7 +27,7 @@ module.exports = {
      */
     findEffectByName (effect) {
         // Check if the parsed effect parameter is a String
-        if (!Str.isString(effect)) { 
+        if (!utils.isString(effect)) { 
             // Not a valid parameter
             throw new Error(`Expected String but received a ${typeof effect}`); 
         }
@@ -83,7 +82,7 @@ module.exports = {
         var unusual = {};
 
         // Assign some new values to our Unusual object depending on the data type of the effect parameter
-        if (Str.isString(effect) && isNaN(effect)) {
+        if (utils.isString(effect) && isNaN(effect)) {
             // The name of the Unusual effect
             unusual.id = this.findEffectByName(effect);
 
@@ -116,7 +115,7 @@ module.exports = {
      */
     getEffectFromObject (item) {
         // Make sure that the item parameter is of type object
-        if (!Obj.isObject(item)) {
+        if (!utils.isObject(item)) {
             // Not a valid parameter
             throw new Error('The item parameter must be an EconItem of type object.');
         }
@@ -130,18 +129,18 @@ module.exports = {
         // Loop trough the item's descriptions
         for (let n = 0; n < item.descriptions.length; n++) {
             // Check if the item is Unusual and has an Unusual effect listed in its description
-            if (Str.itemIsUnusual(item.market_hash_name) && Str.hasUnusualEffect(item.descriptions[n].value)) {
+            if (utils.itemIsUnusual(item.market_hash_name) && utils.hasUnusualEffect(item.descriptions[n].value)) {
                 // The Unusual effect object
                 let effect = {};
 
                 // The Unusual effect
-                let unusual_effect = Str.getUnsualEffect(item.descriptions[n].value);
+                let unusual_effect = utils.getUnsualEffect(item.descriptions[n].value);
 
                 // Particle images for the Unusual effect
                 effect = this.getEffectImages(unusual_effect);
 
                 // The Unusual effects standardized name
-                effect.standardized_name = Str.getStandardizedName(item.market_hash_name, unusual_effect);
+                effect.standardized_name = utils.getStandardizedName(item.market_hash_name, unusual_effect);
                 
                 // Return the Unusual effect
                 return effect;
