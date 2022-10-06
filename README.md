@@ -17,14 +17,19 @@ $ npm install unusual-effects
 ```
 
 Using [yarn](https://yarnpkg.com/package/unusual-effects):
-
 ```bash
 $ yarn add unusual-effects
 ```
 
 ## Testing 
+Using [npm](https://docs.npmjs.com/cli/v8/commands/npm-run-script):
 ```bash
 $ npm test
+```
+
+Using [yarn](https://classic.yarnpkg.com/lang/en/docs/cli/run/):
+```bash
+$ yarn test
 ```
 
 ## Examples
@@ -32,19 +37,19 @@ $ npm test
 ### Importing with `CommonJS`
 
 ```js
-const Unusual = require('unusual-effects');
+const { getEffectImages } = require('unusual-effects')
 ```
 
-### or with `ES6's import` statement.
+### or with `ES6's import` statement
 
 ```js
-import Unusual from 'unusual-effects';
+import { getEffectImages } from 'unusual-effects'
 ```
 
 ### Get `particle images` using the effect's name
 
 ```js
-console.log(Unusual.getEffectImages('Nebula'));
+console.log(getEffectImages('Nebula'))
 ```
 
 There are some more examples available in the [test](https://github.com/SnaBe/node-unusual-effects/tree/master/test) directory.
