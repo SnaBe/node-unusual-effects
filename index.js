@@ -1,7 +1,7 @@
 // node-unusual-effects v1.9.0
 
 // Import some Javascript utilities
-const utils = require('./lib/utils')
+const { includes, isString, isObject, itemIsUnusual, hasUnusualEffect, getUnsualEffect, getStandardizedName } = require('./lib/utils')
 
 // Import our Unusual effect resources
 const effects = require('./resources/effects')
@@ -14,7 +14,7 @@ const effects = require('./resources/effects')
  */
 function isUnusual (effect) {
     // Return the Boolean value from the Object.includes() function
-    return (utils.includes(effects, effect))
+    return (includes(effects, effect))
 }
 
 /**
@@ -25,7 +25,7 @@ function isUnusual (effect) {
  */
 function findEffectByName (effect) {
     // Check if the parsed effect parameter is a String
-    if (!utils.isString(effect)) {
+    if (!isString(effect)) {
         // Not a valid parameter
         throw new Error(`Expected String but received a ${typeof effect}`)
     }
@@ -80,7 +80,7 @@ function getEffectImages (effect) {
     var unusual = { }
 
     // Assign some new values to our Unusual object depending on the data type of the effect parameter
-    if (utils.isString(effect) && isNaN(effect)) {
+    if (isString(effect) && isNaN(effect)) {
         // The name of the Unusual effect
         unusual.id = findEffectByName(effect)
 
@@ -113,7 +113,7 @@ function getEffectImages (effect) {
  */
 function getEffectFromObject (item) {
     // Make sure that the item parameter is of type object
-    if (!utils.isObject(item)) {
+    if (!isObject(item)) {
         // Not a valid parameter
         throw new Error('The item parameter must be an EconItem of type object.')
     }
@@ -127,18 +127,18 @@ function getEffectFromObject (item) {
     // Loop trough the item's descriptions
     for (let n = 0; n < item.descriptions.length; n++) {
         // Check if the item is Unusual and has an Unusual effect listed in its description
-        if (utils.itemIsUnusual(item.market_hash_name) && utils.hasUnusualEffect(item.descriptions[n].value)) {
+        if (itemIsUnusual(item.market_hash_name) && hasUnusualEffect(item.descriptions[n].value)) {
             // The Unusual effect object
             let effect = { }
 
             // The Unusual effect
-            let unusual_effect = utils.getUnsualEffect(item.descriptions[n].value)
+            let unusual_effect = getUnsualEffect(item.descriptions[n].value)
 
             // Particle images for the Unusual effect
             effect = getEffectImages(unusual_effect)
 
             // The Unusual effects standardized name
-            effect.standardized_name = utils.getStandardizedName(item.market_hash_name, unusual_effect)
+            effect.standardized_name = getStandardizedName(item.market_hash_name, unusual_effect)
             
             // Return the Unusual effect
             return effect
