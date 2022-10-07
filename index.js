@@ -77,7 +77,7 @@ function getEffectImages (effect) {
     }
 
     // Store our local Unusual object here
-    var unusual = { }
+    var unusual = {}
 
     // Assign some new values to our Unusual object depending on the data type of the effect parameter
     if (isString(effect) && isNaN(effect)) {
@@ -129,7 +129,7 @@ function getEffectFromObject (item) {
         // Check if the item is Unusual and has an Unusual effect listed in its description
         if (itemIsUnusual(item.market_hash_name) && hasUnusualEffect(item.descriptions[n].value)) {
             // The Unusual effect object
-            let effect = { }
+            let effect = {}
 
             // The Unusual effect
             let unusual_effect = getUnsualEffect(item.descriptions[n].value)
