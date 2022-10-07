@@ -16,12 +16,11 @@
 		"steam",
 		"tf2",
 		"backpack-tf",
+		"economy",
 		"trading",
-		"module",
 		"unusual",
 		"effects",
-		"node",
-		"economy"
+		"particles"
 	],
 	"author": "Simon Sørensen",
 	"license": "MIT",
