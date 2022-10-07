@@ -1,4 +1,4 @@
-// node-unusual-effects v1.9.0
+// node-unusual-effects v1.9.1
 
 // Import some Javascript utilities
 const { includes, isString, isObject, itemIsUnusual, hasUnusualEffect, getUnsualEffect, getStandardizedName } = require('./lib/utils')
