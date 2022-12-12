@@ -1,4 +1,4 @@
-// node-unusual-effects v1.9.1
+// node-unusual-effects v1.10.1
 
 // Import some Javascript utilities
 const { includes, isString, isObject, itemIsUnusual, hasUnusualEffect, getUnsualEffect, getStandardizedName } = require('./lib/utils')
@@ -77,7 +77,7 @@ function getEffectImages (effect) {
     }
 
     // Store our local Unusual object here
-    var unusual = {}
+    let unusual = {}
 
     // Assign some new values to our Unusual object depending on the data type of the effect parameter
     if (isString(effect) && isNaN(effect)) {
@@ -94,11 +94,13 @@ function getEffectImages (effect) {
         unusual.name = findEffectById(effect)
     }
 
+    const id = (isObject(unusual.id)) ? unusual.id[0] : unusual.id
+
     // Particle images for the Unusual effect in various sizes
     unusual.images = {
-        small: `https://backpack.tf/images/440/particles/${unusual.id}_94x94.png`, // A small image is 94x94 pxiels
-        medium: `https://backpack.tf/images/440/particles/${unusual.id}_188x188.png`, // A medium image is 188x188 pxiels
-        large: `https://backpack.tf/images/440/particles/${unusual.id}_380x380.png` // A large image is 380x380 pxiels
+        small: `https://backpack.tf/images/440/particles/${id}_94x94.png`, // A small image is 94x94 pxiels
+        medium: `https://backpack.tf/images/440/particles/${id}_188x188.png`, // A medium image is 188x188 pxiels
+        large: `https://backpack.tf/images/440/particles/${id}_380x380.png` // A large image is 380x380 pxiels
     }
 
     // Return the Unusual object
