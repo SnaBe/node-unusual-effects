@@ -6,8 +6,8 @@
 	"types": "index.d.ts",
 	"scripts": {
 		"test": "mocha",
-		"lint": "eslint -c .eslintrc.json .",
-		"fix": "eslint -c .eslintrc.json . --fix"
+		"lint": "eslint -c .eslintrc.js .",
+		"fix": "eslint -c .eslintrc.js . --fix"
 	},
 	"repository": {
 		"type": "git",

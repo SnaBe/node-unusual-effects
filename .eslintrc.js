@@ -1,18 +1,24 @@
-{
+module.exports = {
     "env": {
-        "browser": true,
-        "commonjs": true,
+        "node": true,
         "es2021": true,
-        "mocha": true
+        "commonjs": true
     },
     "extends": "eslint:recommended",
     "parserOptions": {
         "ecmaVersion": "latest"
     },
     "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
         "linebreak-style": [
             "error",
-            "windows"
+            process.platform === "win32" ? "windows" : "unix"
         ],
         "quotes": [
             "error",
