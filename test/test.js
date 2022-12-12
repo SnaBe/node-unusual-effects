@@ -61,6 +61,8 @@ describe('unusual-effects tests', () => {
 
             // The result should equal an object
             expect(result).to.be.an('object')
+            expect(result).to.have.property('images')
+            expect(result).to.have.property('name', 'Bonzo The All-Gnawing')
         })
     })
 })
