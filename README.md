@@ -3,7 +3,7 @@ A Node.js wrapper for Team Fortress 2's Unusual particle effects.
 
 [![npm version](https://img.shields.io/npm/v/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
 [![node version](https://img.shields.io/node/v/unusual-effects)](https://nodejs.org/en/about/releases/)
-[![npm test](https://img.shields.io/github/workflow/status/SnaBe/node-unusual-effects/Node.js%20%7C%20Ubuntu?logo=github)](https://github.com/SnaBe/node-unusual-effects/actions/workflows/test.yml)
+[![npm test](https://img.shields.io/github/actions/workflow/status/SnaBe/node-unusual-effects/test.yml?logo=github&branch=master)](https://github.com/SnaBe/node-unusual-effects/actions/workflows/test.yml)
 [![dependencies](https://img.shields.io/librariesio/release/npm/unusual-effects)](https://www.npmjs.com/package/unusual-effects)
 [![npm downloads](https://img.shields.io/npm/dm/unusual-effects.svg)](https://npmjs.com/package/unusual-effects)
 [![license](https://img.shields.io/npm/l/unusual-effects.svg)](https://github.com/SnaBe/node-unusual-effects/blob/master/LICENSE)
