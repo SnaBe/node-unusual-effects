@@ -62,4 +62,4 @@ See the [Wiki](https://github.com/SnaBe/node-unusual-effects/wiki) for further d
 
 [MIT](LICENSE)
 
-Copyright 2022, Simon Sørensen
+Copyright 2023, Simon Sørensen
