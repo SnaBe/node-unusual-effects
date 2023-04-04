@@ -1,9 +1,7 @@
-// node-unusual-effects v1.10.1
-
 // Import some Javascript utilities
 const { includes, isString, isObject, itemIsUnusual, hasUnusualEffect, getUnsualEffect, getStandardizedName } = require('./lib/utils')
 
-// Import our Unusual effect resources
+// Import the Unusual effect resources
 const effects = require('./resources/effects')
 
 /**
@@ -30,7 +28,7 @@ function findEffectByName (effect) {
         throw new Error(`Expected String but received a ${typeof effect}`)
     }
 
-    // Check if effect parameter is an actual Unusual effect
+    // Check if the effect parameter is a known Unusual effect
     if (!isUnusual(effect)) {
         // Not a valid Unusual effect
         return null
@@ -53,7 +51,7 @@ function findEffectById (id) {
         throw new Error(`Expected Number but received a ${typeof id}`)
     }
 
-    // Check if effect parameter is an actual Unusual effect
+    // Check if the id parameter is a known Unusual effect
     if (!isUnusual(id)) {
         // Not a valid Unusual effect
         return null
@@ -65,21 +63,21 @@ function findEffectById (id) {
 
 /**
  * Get the particle images for any given Unusual effect.
- * @description Particle images are provided by Backpack.tf and comes in various sizes (small, medium, large).
+ * @description Particle images are provided by Backpack.tf and come in various sizes (small, medium, large).
  * @param { string | number } effect Any Unusual effect name or id.
- * @returns { any | null } An object containing the Unusual effect's name, id and images.
+ * @returns { GetEffectImagesResponse | null } An object containing the Unusual effect's name, id and images.
  */
 function getEffectImages (effect) {
-    // Check if effect parameter is an actual Unusual effect
+    // Check if the effect parameter is a known Unusual effect
     if (!isUnusual(effect)) {
         // Not a valid Unusual effect
         return null
     }
 
-    // Store our local Unusual object here
+    // Store the local Unusual object here
     let unusual = {}
 
-    // Assign some new values to our Unusual object depending on the data type of the effect parameter
+    // Assign some new values to the Unusual object depending on the data type of the effect parameter
     if (isString(effect) && isNaN(effect)) {
         // The name of the Unusual effect
         unusual.id = findEffectByName(effect)
@@ -108,38 +106,38 @@ function getEffectImages (effect) {
 }
 
 /**
- * Get an Unusual effect's name, standardized name, id & images from an EconItem object.
+ * Get an Unusual effect's name, standardized name, id and images from an EconItem object.
  * @description This function relies on EconItem objects returned from node-steamcommunity, node-steam-tradeoffer-manager or the Steam Web API.
- * @param { any } item An EconItem object that represents an item within the Steam Economy.
- * @returns { any | null } An object containing the available details for an Unusual effect, otherwise null.
+ * @param { EconItem } item An EconItem object that represents an item within the Steam economy.
+ * @returns { GetEffectFromObjectResponse | null } An object containing the available details for the Unusual effect, otherwise null.
  */
 function getEffectFromObject (item) {
-    // Make sure that the item parameter is of type object
+    // Make sure that the item parameter is an object
     if (!isObject(item)) {
         // Not a valid parameter
-        throw new Error('The item parameter must be an EconItem of type object.')
+        throw new Error('The item parameter must be an EconItem object.')
     }
 
     // Check if the object contains a description value
-    if (!item.descriptions) {
+    if (!item.descriptions && !Array.isArray(item.descriptions)) {
         // Not a valid EconItem object
-        throw new Error('Your EconItem object seems to be missing an array of descriptions.')
+        throw new Error('The EconItem object seems to be missing an array of descriptions.')
     }
 
     // Loop trough the item's descriptions
     for (let n = 0; n < item.descriptions.length; n++) {
-        // Check if the item is Unusual and has an Unusual effect listed in its description
+        // Check if the item is an Unusual and has a effect listed in its description
         if (itemIsUnusual(item.market_hash_name) && hasUnusualEffect(item.descriptions[n].value)) {
             // The Unusual effect object
             let effect = {}
 
-            // The Unusual effect
+            // Get the Unusual effect from the item's description value at index n
             let unusual_effect = getUnsualEffect(item.descriptions[n].value)
 
-            // Particle images for the Unusual effect
+            // Get the particle images for the Unusual effect
             effect = getEffectImages(unusual_effect)
 
-            // The Unusual effects standardized name
+            // Get the Unusual effect's standardized name
             effect.standardized_name = getStandardizedName(item.market_hash_name, unusual_effect)
             
             // Return the Unusual effect
