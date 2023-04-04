@@ -1,4 +1,4 @@
-/** EconItem object for describing Team Fortress 2 items on Steam. */
+/** An EconItem object represents a Team Fortress 2 item on Steam. */
 export interface EconItem {
     appid: number, // The item's app id
     contexid: string, // The item's context id 
@@ -8,9 +8,9 @@ export interface EconItem {
     amount: number, // The amount of matching items found in the inventory
     pos: number, // The item's position in the inventory
     id: string, // The item's unique id
-    background_color: string, // The background color for the item on Steamcommunity
-    icon_url: string, // The icon URL for the item on Steamcommunity
-    icon_url_large: string, // The larger icon URL for the item on Steamcommunity
+    background_color: string, // The background color for the item on Steam
+    icon_url: string, // The icon URL for the item on Steam
+    icon_url_large: string, // The larger icon URL for the item on Steam
     tradable: boolean, // The item's tradable status
     actions: [ // Array of Steam actions 
         {
@@ -32,7 +32,7 @@ export interface EconItem {
     commodity: boolean, // If the item is a commodity
     market_tradable_restriction: number, // Level of restrictions for trading
     market_marketable_restriction: number, // Level of restrictions for the Steam market
-    marketable: boolean, // Can the item be listed on the Steamcommunity market
+    marketable: boolean, // Can the item be listed on the Steam Community Market
     tags: [
         {
             internal_name: string, // Tag's internal name

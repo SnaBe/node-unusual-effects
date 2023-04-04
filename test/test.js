@@ -1,14 +1,14 @@
 // Require Mocha and Chai for unit testing the functions
 const expect = require('chai').expect
 
-// Required for interacting with the Steamcommunity API
+// Required for interacting with various interfaces on Steam Community
 const SteamCommunity = require('steamcommunity')
 
 // Require the module itself
-// Replace this with const Unusual = require('unusual-effects'); if used outside of the module directory
+// Replace '../index' with 'unusual-effects' if used outside of the module directory
 const { findEffectByName, findEffectById, getEffectImages, getEffectFromObject } = require('../index')
 
-// Steamcommunity instance for getting user inventories
+// Steam Community instance for getting user inventories
 const community = new SteamCommunity()
 
 // The unit tests for each function

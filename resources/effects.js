@@ -1,4 +1,4 @@
-// Unusual Effect resources for node-unusual-effects v1.6.0
+// Unusual Effect resources for node-unusual-effects
 module.exports = {
     // Unusual effect IDs and their matching name
     4: 'Community Sparkle',
