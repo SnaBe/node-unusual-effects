@@ -1,4 +1,4 @@
-// Import some Javascript utilities
+// Import some JavaScript utilities
 const { includes, isString, isObject, itemIsUnusual, hasUnusualEffect, getUnsualEffect, getStandardizedName } = require('./lib/utils')
 
 // Import the Unusual effect resources
@@ -92,6 +92,7 @@ function getEffectImages (effect) {
         unusual.name = findEffectById(effect)
     }
 
+    // Get the Unusual effect id
     const id = (isObject(unusual.id)) ? unusual.id[0] : unusual.id
 
     // Particle images for the Unusual effect in various sizes
