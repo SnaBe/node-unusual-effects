@@ -59,7 +59,7 @@ module.exports = {
     77: 'Something Burning This Way Comes',	
     78: 'Hellfire',	
     79: 'Darkblaze',	
-    80:' Demonflame',	
+    80: 'Demonflame',
     81: 'Bonzo The All-Gnawing',
     82: 'Amaranthine',
     83: 'Stare From Beyond',
