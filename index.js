@@ -25,9 +25,9 @@ function getAllEffects () {
     let unusuals = []
 
     // Loop over the Unusual effects
-    for (key in effects) {
+    for (let key in effects) {
         // Check if the effects object has a property with the specified key
-        if (effects.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(effects, key)) {
             // Only return Unusual effect objects with their name as the entry key
             if (isNaN(key)) unusuals.push(effects[key])
         }
@@ -100,9 +100,9 @@ function getEffectsByType (type) {
     let unusuals = []
 
     // Loop over the Unusual effects
-    for (key in effects) {
+    for (let key in effects) {
         // Check if the effects object has a property with the specified key
-        if (effects.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(effects, key)) {
             // Only return Unusual effect objects with their name as the entry key
             if (effects[key].type === type && isNaN(key)) unusuals.push(effects[key])
         }
@@ -129,9 +129,9 @@ function getEffectsBySeries (series) {
     let unusuals = []
 
     // Loop over the Unusual effects
-    for (key in effects) {
+    for (let key in effects) {
         // Check if the effects object has a property with the specified key
-        if (effects.hasOwnProperty(key)) {
+        if (Object.prototype.hasOwnProperty.call(effects, key)) {
             // Only return Unusual effect objects with their name as the entry key
             if (effects[key].series === series && isNaN(key)) unusuals.push(effects[key])
         }
