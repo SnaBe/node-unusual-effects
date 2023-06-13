@@ -37,26 +37,26 @@ $ yarn test
 ### Importing with `CommonJS`
 
 ```js
-const { getEffectImages } = require('unusual-effects')
+const { getEffectByName } = require('unusual-effects')
 ```
 
 ### or with `ES6's import` statement
 
 ```js
-import { getEffectImages } from 'unusual-effects'
+import { getEffectByName } from 'unusual-effects'
 ```
 
-### Get `particle images` using the effect's name
+### Get `Backpack.tf particle images` using the effect's name
 
 ```js
-console.log(getEffectImages('Nebula'))
+console.log(getEffectByName('Nebula').images)
 ```
 
 There are some more examples available in the [test](https://github.com/SnaBe/node-unusual-effects/tree/master/test) directory.
 
 ## Documentation
 
-See the [Wiki](https://github.com/SnaBe/node-unusual-effects/wiki) for further documentation.
+Version [2.0.0](https://github.com/SnaBe/node-unusual-effects/releases/tag/v2.0.0) includes breaking changes, please see the newly updated [Wiki pages](https://github.com/SnaBe/node-unusual-effects/wiki) for further documentation.
 
 ## License
 

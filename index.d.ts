@@ -1,3 +1,40 @@
+/** A Backpack.tf particle effect image object. */
+export interface ParticleImage {
+    size: '94x94' | '188x188' | '380x380', // The various image sizes
+    source: { // The source of the particle image
+        text: 'Backpack.tf', // The name of the source
+        url: 'https://backpack.tf' // A link to the image
+    },
+    url: string // The particle image url
+}
+
+/** An object that represents an Unusual effect. */
+export interface UnusualEffect {
+    id: number, // The Unusual effect's unique id
+    name: string, // The Unusual effect's name
+    type: 'cosmetics' | 'weapons' | 'taunts', // The type of Unusual effect
+    series: string, // The crate series associated with the effect
+    images: { // A nested object of Backpack.tf particle images
+        small: ParticleImage, // Small particle image object
+        medium: ParticleImage, // Medium particle image object
+        large: ParticleImage // Large particle image object
+    },
+    crates: Array<{ // An array of crates and cases
+        name: string, // The name of the crate or case
+        series_start?: string, // The numerical start of the crate series
+        series_end?: string, // The numerical end of the crate series
+        availability: 'active' | 'retired' // If the effect is available in the crate
+    }>,
+    date_added: number, // The date the effect was added to the game
+    update_name: string, // The name of the in-game update
+    last_update: number // The last time the object was updated
+}
+
+/** A Backpack.tf standardized Unusual effect object. */
+export interface StandardizedUnusualEffect extends UnusualEffect {
+    standardized_name: string // The effect's standardized name
+}
+
 /** An EconItem object represents a Team Fortress 2 item on Steam. */
 export interface EconItem {
     appid: number, // The item's app id
@@ -54,61 +91,51 @@ export interface EconItem {
     ]
 }
 
-/** Response object for the getEffectImages function. */
-export interface GetEffectImagesResponse {
-    id: number, // The Unusual effect's unique id
-    name: string, // The name of the Unusual effect
-    images: { // An object of external links to Backpack.tf images
-        small: string, // A small image is 94x94 pixels
-        medium: string, // A medium image is 188x188 pixels
-        large: string // A large image is 380x380 pixels
-    }
-}
-
-/** Response object for the getEffectFromObject function. */
-export interface GetEffectFromObjectResponse {
-    id: number, // The Unusual effect's unique id
-    name: string, // The name of the Unusual effect
-    images: { // An object of external links to Backpack.tf images
-        small: string, // A small image is 94x94 pixels
-        medium: string, // A medium image is 188x188 pixels
-        large: string // A large image is 380x380 pixels
-    },
-    standardized_name: string // The effect's standardized name (as seen on Backpack.tf)
-}
-
 /**
- * Check if a String (effect name) or Number (effect id) is an Unusual effect.
- * @description This function is used as middleware by the following methods; findEffectByName, findEffectById and getEffectImages.
+ * Check if a String or Number is an Unusual effect.
+ * @description This function is used as middleware by the following functions; getEffectByName and getEffectById.
  * @param { string | number } effect Any Unusual effect name or id.
- * @returns { boolean } True if the effect matches any known Unusual effect, otherwise false.
+ * @returns { boolean } True if the specified `effect` matches any known Unusual effect, otherwise, false.
  */
 export function isUnusual(effect: string | number): boolean;
 /**
- * Find the effect id matching the parsed Unusual effect's name.
- * @description Unusual effect names can be obtained from an EconItem object's description or a Steam Web API response.
+ * Get all the Unusual effects currently available in-game.
+ * @description There are currently 240 cosmetic effects, 99 taunt effects, and 5 weapon effects available in-game.
+ * @returns { Array<UnusualEffect> } An array of Unusual effect objects.
+ */
+export function getAllEffects(): Array<UnusualEffect>;
+/**
+ * Get the Unusual effect whose `id` property matches the specified string or number.
+ * @description An Unusual effect's `id` can usually be obtained from a Backpack.tf API response.
+ * @param { string | number } id The `id` of the Unusual effect.
+ * @returns { UnusualEffect | null } An Unusual effect object matching the specified `id`, or null if no matching Unusual was found.
+ */
+export function getEffectById(id: string | number): UnusualEffect | null;
+/**
+ * Get the Unusual effect whose `name` property matches the specified string.
+ * @description An Unusual effect's name can be obtained from an `EconItem` object or a Steam Web API response.
  * @param { string } effect The name of the Unusual effect.
- * @returns { number | null } The Unusual effect's id matching the 'effect' parameter, otherwise null.
+ * @returns { UnusualEffect | null } An Unusual effect object matching the specified `effect`, or null if no matching Unusual was found.
  */
-export function findEffectByName(effect: string): number | null;
+export function getEffectByName(effect: string): UnusualEffect | null;
 /**
- * Find the Unusual effect's name matching the parsed effect id.
- * @description Unusual effect ids can usually be obtained from a Backpack.tf API response.
- * @param { string | number } id The id of the Unusual effect.
- * @returns { string } The name of the Unusual effect matching the 'id' parameter, otherwise null.
+ * Get all the Unusual effects whose `type` property matches the specified string.
+ * @description This function can be used to filter Unusual effects for a specific item `type`.
+ * @param { string } type The `type` of in-game item that an Unusual effect is associated with.
+ * @returns { Array<UnusualEffect> } An array of Unusual effect objects matching the specified `type`.
  */
-export function findEffectById(id: string | number): string | null;
+export function getEffectsByType(type: string): Array<UnusualEffect> | null;
 /**
- * Get the particle images for any given Unusual effect.
- * @description Particle images are provided by Backpack.tf and come in various sizes (small, medium, large).
- * @param { string | number } effect Any Unusual effect name or id.
- * @returns { GetEffectImagesResponse | null } An object containing the Unusual effect's name, id and images.
+ * Get all the Unusual effects whose `series` property matches the specified string.
+ * @description This function can be used to filter Unusual effects for a specific crate `series`.
+ * @param { string } series The series of crates or cases that an Unusual effect is associated with.
+ * @returns { Array<UnusualEffect> } An array of Unusual effect objects matching the specified `series`.
  */
-export function getEffectImages(effect: string | number): GetEffectImagesResponse | null;
+export function getEffectsBySeries(series: string): Array<UnusualEffect> | null;
 /**
- * Get an Unusual effect's name, standardized name, id and images from an EconItem object.
- * @description This function relies on EconItem objects returned from node-steamcommunity, node-steam-tradeoffer-manager or the Steam Web API.
- * @param { EconItem } item An EconItem object that represents an item within the Steam economy.
- * @returns { GetEffectFromObjectResponse | null } An object containing the available details for the Unusual effect, otherwise null.
+ * Get an Unusual effect from an `EconItem` object.
+ * @description This function relies on `EconItem` objects returned from node-steamcommunity, node-steam-tradeoffer-manager or the Steam Web API.
+ * @param { EconItem } item An `EconItem` object that represents an item within the Steam economy.
+ * @returns { StandardizedUnusualEffect | null } An Unusual effect object matching the specified `item`, or null if no matching Unusual was found.
  */
-export function getEffectFromObject(item: EconItem): GetEffectFromObjectResponse | null;
+export function getEffectFromObject(item: EconItem): StandardizedUnusualEffect | null;
