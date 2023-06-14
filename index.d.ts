@@ -113,8 +113,8 @@ export function getAllEffects(): Array<UnusualEffect>;
 export function getEffectById(id: string | number): UnusualEffect | null;
 /**
  * Get the Unusual effect whose `name` property matches the specified string.
- * @description An Unusual effect's name can be obtained from an `EconItem` object or a Steam Web API response.
- * @param { string } effect The name of the Unusual effect.
+ * @description An Unusual effect's `name` can be obtained from an `EconItem` object or a Steam Web API response.
+ * @param { string } effect The `name` of the Unusual effect.
  * @returns { UnusualEffect | null } An Unusual effect object matching the specified `effect`, or null if no matching Unusual was found.
  */
 export function getEffectByName(effect: string): UnusualEffect | null;
