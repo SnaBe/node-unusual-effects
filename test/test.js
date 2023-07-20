@@ -111,7 +111,7 @@ describe('unusual-effects tests', () => {
             // The result should be an array of Unusual effect objects
             // and must have a length of 344 (240 cosmetic, 99 taunt and 5 weapon effects)
             expect(result).to.be.an('array')
-            expect(result.length).to.equal(344)
+            expect(result.length).to.equal(364)
         })
     })
 
@@ -120,7 +120,7 @@ describe('unusual-effects tests', () => {
         // Return type should be an Unusual effect object
         it('should return an Unusual effect object', (done) => {
             // A "random" Steam user's unique id
-            const user = '76561197977733292'
+            const user = '76561198122604075'
 
             // Get that user's Team Fortress 2 inventory
             community.getUserInventoryContents(user, 440, 2, true, (err, inventory) => {
