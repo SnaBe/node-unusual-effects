@@ -4,7 +4,7 @@ A Node.js wrapper for Team Fortress 2's Unusual particle effects.
 [![npm version](https://img.shields.io/npm/v/unusual-effects.svg?style=flat-square)](https://npmjs.com/package/unusual-effects)
 [![node version](https://img.shields.io/node/v/unusual-effects?style=flat-square)](https://nodejs.org/en/about/releases/)
 [![npm test](https://img.shields.io/github/actions/workflow/status/SnaBe/node-unusual-effects/test.yml?logo=github&branch=master&style=flat-square)](https://github.com/SnaBe/node-unusual-effects/actions/workflows/test.yml)
-[![dependencies](https://img.shields.io/librariesio/release/npm/unusual-effects/1.11.2?style=flat-square)](https://www.npmjs.com/package/unusual-effects)
+[![dependencies](https://img.shields.io/librariesio/release/npm/unusual-effects?style=flat-square)](https://www.npmjs.com/package/unusual-effects)
 [![npm downloads](https://img.shields.io/npm/dm/unusual-effects.svg?style=flat-square)](https://npmjs.com/package/unusual-effects)
 [![license](https://img.shields.io/npm/l/unusual-effects.svg?style=flat-square)](https://github.com/SnaBe/node-unusual-effects/blob/master/LICENSE)
 [![paypal](https://img.shields.io/badge/paypal-donate-yellow.svg?style=flat-square)](https://www.paypal.me/snabe)
