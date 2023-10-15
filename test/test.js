@@ -111,7 +111,7 @@ describe('unusual-effects tests', () => {
             // The result should be an array of Unusual effect objects
             // and must have a length of 344 (240 cosmetic, 99 taunt and 5 weapon effects)
             expect(result).to.be.an('array')
-            expect(result.length).to.equal(364)
+            expect(result.length).to.equal(384)
         })
     })
 
