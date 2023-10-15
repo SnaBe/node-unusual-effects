@@ -30,11 +30,11 @@
 	},
 	"homepage": "https://github.com/SnaBe/node-unusual-effects#readme",
 	"devDependencies": {
-		"chai": "^4.3.7",
-		"eslint": "^8.45.0",
+		"chai": "^4.3.10",
+		"eslint": "^8.51.0",
 		"mocha": "^10.2.0",
-		"steamcommunity": "^3.46.1",
-		"typescript": "^5.1.6"
+		"steamcommunity": "^3.47.0",
+		"typescript": "^5.2.2"
 	},
 	"engines": {
 		"node": ">=16.0.0"
