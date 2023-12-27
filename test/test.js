@@ -109,9 +109,9 @@ describe('unusual-effects tests', () => {
             const result = getAllEffects()
 
             // The result should be an array of Unusual effect objects
-            // and must have a length of 344 (240 cosmetic, 99 taunt and 5 weapon effects)
+            // and must have a length of 407 (277 cosmetic, 125 taunt and 5 weapon effects)
             expect(result).to.be.an('array')
-            expect(result.length).to.equal(384)
+            expect(result.length).to.equal(407)
         })
     })
 
