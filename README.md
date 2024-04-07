@@ -62,4 +62,4 @@ Version [2.0.0](https://github.com/SnaBe/node-unusual-effects/releases/tag/v2.0.
 
 [MIT](LICENSE)
 
-Copyright 2023, Simon Sørensen
+Copyright 2024, Simon Sørensen
