@@ -33490,7 +33490,7 @@ module.exports = {
     "Radiant Rivalry": {
         "id": [
             312,
-            312
+            313
         ],
         "name": "Radiant Rivalry",
         "type": "cosmetics",
